@@ -11,9 +11,9 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="backdrop" type="Sprite" parent="."]
-position = Vector2( 527.644, 310.178 )
+position = Vector2( 530.566, 310.178 )
 rotation = -1.5708
-scale = Vector2( 0.531, -0.528 )
+scale = Vector2( 0.53078, 0.53078 )
 texture = ExtResource( 1 )
 
 [node name="Spawner" parent="." instance=ExtResource( 2 )]

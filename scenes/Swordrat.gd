@@ -49,6 +49,6 @@ func get_health():
 func add_target(enemy):
     targets.append(enemy)
 
-func _on_Swordcat_area_shape_entered(area_id, area, area_shape, self_shape):
+func _on_Swordrat_area_shape_entered(area_id, area, area_shape, self_shape):
     enemy_detected = true
     area.add_target(self)
