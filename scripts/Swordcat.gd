@@ -26,10 +26,11 @@ func _process(delta):
 func attack():
     if attack_timer.get_time_left() == 0:
         targets.front().hit(attack_val)
-        attack_timer.start()
+        attack_timer.start(1)
         
 func hit(damage):
     set_health(get_health() - damage)
+    print("hit")
     
 func die():
     queue_free()
@@ -50,5 +51,6 @@ func add_target(enemy):
     targets.append(enemy)
 
 func _on_Swordcat_area_shape_entered(area_id, area, area_shape, self_shape):
-    enemy_detected = true
-    area.add_target(self)
+    if not "Swordcat" in area.name:
+        enemy_detected = true
+        area.add_target(self)
