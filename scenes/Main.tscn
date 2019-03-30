@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scenes/Swordcat.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/backdrop.PNG" type="Texture" id=2]
-[ext_resource path="res://scenes/Spawner.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node"]
 
@@ -15,14 +13,5 @@ position = Vector2( 95.9422, 103.102 )
 
 [node name="Swordcat2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 841.819, 182.224 )
-my_team = 1
-
-[node name="backdrop" type="Sprite" parent="."]
-position = Vector2( 530.566, 310.178 )
-rotation = -1.5708
-scale = Vector2( 0.53078, 0.53078 )
-texture = ExtResource( 2 )
-
-[node name="Spawner" parent="." instance=ExtResource( 3 )]
-position = Vector2( 210.386, 91.5569 )
+my_team = -1
 
