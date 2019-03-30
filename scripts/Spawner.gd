@@ -8,7 +8,7 @@ onready var input_cooldown = get_node("input_cooldown")
 onready var spawnpoint = get_node("spawnpoint")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-    input_cooldown.play
+    pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
