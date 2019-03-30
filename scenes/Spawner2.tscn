@@ -14,7 +14,8 @@ sword = ExtResource( 2 )
 position = Vector2( -2.263, 0.886002 )
 texture = ExtResource( 3 )
 
-[node name="sword_cooldown" type="Node" parent="."]
+[node name="sword_cooldown" type="Timer" parent="."]
+one_shot = true
 
 [node name="spawnpoint" type="Container" parent="."]
 margin_left = -84.0

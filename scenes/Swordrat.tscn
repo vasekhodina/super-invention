@@ -17,8 +17,8 @@ position = Vector2( -79.8688, -58.4406 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -4.87009, -0.649307 )
-scale = Vector2( 0.185079, 0.185079 )
+position = Vector2( -0.974087, 7.62939e-006 )
+scale = Vector2( 0.113651, 0.113651 )
 texture = ExtResource( 2 )
 
 [node name="Attack_down" type="CollisionShape2D" parent="."]
