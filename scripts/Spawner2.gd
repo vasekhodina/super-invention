@@ -14,14 +14,15 @@ func _ready():
 #func _process(delta):
 #	pass
 func _process(delta):
-    if Input.is_action_just_pressed("p1_down") :
+    if Input.is_action_just_pressed("p2_down") :
         print("down")
         self.set_position(self.get_position() + Vector2(0,64));
-    if Input.is_action_just_pressed("p1_up"):
+    if Input.is_action_just_pressed("p2_up"):
         print("up")
         self.set_position(self.get_position() + Vector2(0,-64));
-    if Input.is_action_just_pressed("p1_sword"):
+    if Input.is_action_just_pressed("p2_sword"):
         spawn(swordcat.instance());
 func spawn(figure):
     self.get_parent().add_child(figure)
+    figure.set_my_team(figure.team.RIGHT);
     figure.set_position(self.get_position())
