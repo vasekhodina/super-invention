@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Spawner.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Swordcat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource( 1 )
+swordcat = ExtResource( 2 )
+
+[node name="SpawnerButton" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="input_cooldown" type="Timer" parent="."]
+one_shot = true
+
+[node name="spawnpoint" type="Container" parent="."]
+
