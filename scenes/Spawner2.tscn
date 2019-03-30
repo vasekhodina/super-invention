@@ -11,14 +11,9 @@ sword = ExtResource( 2 )
 [node name="Spawner" type="Sprite" parent="."]
 
 [node name="icon" type="Sprite" parent="Spawner"]
-position = Vector2( -2.263, 0.886002 )
 texture = ExtResource( 3 )
 
 [node name="sword_cooldown" type="Node" parent="."]
 
-[node name="spawnpoint" type="Container" parent="."]
-margin_left = -84.0
-margin_top = -16.0
-margin_right = -44.0
-margin_bottom = 27.0
+[node name="spawnpoint" type="Position2D" parent="."]
 

@@ -14,9 +14,5 @@ texture = ExtResource( 3 )
 [node name="sword_cooldown" type="Timer" parent="."]
 one_shot = true
 
-[node name="spawnpoint" type="Container" parent="."]
-margin_left = 39.0
-margin_top = -21.0
-margin_right = 78.0
-margin_bottom = 28.0
+[node name="spawnpoint" type="Position2D" parent="."]
 
