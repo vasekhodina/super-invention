@@ -7,7 +7,6 @@ export var speed = 200
 export var my_team = team.LEFT setget set_my_team, get_my_team
 
 var velocity = Vector2()
-var enemy_detected = false
 var targets = []
 onready var attack_timer = get_node("AttackTimer")
 
@@ -16,21 +15,20 @@ func _ready():
         velocity = Vector2(speed, 0)
     
 func _process(delta):
-    if not enemy_detected:
-        set_position(get_position() + velocity * delta * my_team)
-    if not targets.empty():
-        attack()
+    cleanup_targets()
     if health <= 0:
         die()
+    set_position(get_position() + velocity * delta * my_team)
+    if attack_timer.get_time_left() == 0 and not targets.empty() and health > 0:
+        attack(targets.front())
         
-func attack():
-    if attack_timer.get_time_left() == 0:
-        targets.front().hit(attack_val)
-        attack_timer.start(1)
+func attack(target):
+    target.hit(attack_val)
+    attack_timer.start(1)
         
 func hit(damage):
     set_health(get_health() - damage)
-    print("hit")
+    print(name, health)
     
 func die():
     queue_free()
@@ -51,6 +49,15 @@ func add_target(enemy):
     targets.append(enemy)
 
 func _on_Swordcat_area_shape_entered(area_id, area, area_shape, self_shape):
-    if not "Swordcat" in area.name:
-        enemy_detected = true
+    if area_shape == 2 and self_shape == 2:
+        velocity = Vector2()
+    if area.get_my_team() != get_my_team() and (self_shape == 0 or self_shape == 1) and area_shape == 2:
         area.add_target(self)
+
+func _on_Swordcat_area_shape_exited(area_id, area, area_shape, self_shape):
+    print("exited", targets)
+    
+func cleanup_targets():
+    for target in targets:
+        if not is_instance_valid(target):
+            targets.erase(target)

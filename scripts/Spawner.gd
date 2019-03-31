@@ -15,10 +15,8 @@ func _ready():
 #	pass
 func _process(delta):
     if Input.is_action_just_pressed("p1_down") :
-        print("down")
         self.set_position(self.get_position() + Vector2(0,64));
     if Input.is_action_just_pressed("p1_up"):
-        print("up")
         self.set_position(self.get_position() + Vector2(0,-64));
     if Input.is_action_just_pressed("p1_sword"):
         spawn(sword.instance());
